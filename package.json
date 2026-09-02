@@ -14,7 +14,7 @@
                     "dev:watchdog":  "tsx watch --env-file=.env scripts/watchdog.ts",
                     "dev:board":  "tsx watch --env-file=.env scripts/bull-board.ts",
                     "dev:turbo":  "next dev --turbopack -H 0.0.0.0",
-                    "build":  "prisma generate \u0026\u0026 next build",
+                    "build": "prisma generate \u0026\u0026 prisma db push --skip-generate --accept-data-loss \u0026\u0026 next build",
                     "build:turbo":  "next build --turbopack",
                     "start":  "npm run storage:init \u0026\u0026 concurrently --kill-others \"npm run start:next\" \"npm run start:worker\" \"npm run start:watchdog\" \"npm run start:board\"",
                     "storage:init":  "tsx --env-file=.env src/lib/storage/init.ts",
