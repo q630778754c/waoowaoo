@@ -1,0 +1,5 @@
+{
+  "build_command": "prisma generate && prisma db push --skip-generate --accept-data-loss && next build",
+  "start_command": "npm run start",
+  "health_check_path": "/api/health"
+}
